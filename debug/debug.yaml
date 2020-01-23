@@ -12,7 +12,8 @@ spec:
     runAsGroup: 65534
   containers:
   - image: chiluk/debug
-    name: debug
+    imagePullPolicy: Always
+    name: chiluk-debug
     command:
       - 'sleep'
-      - '3600'
+      - '28800'
