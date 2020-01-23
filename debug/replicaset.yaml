@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: chiluk-debug
+  labels:
+    app: debug
+    owner: chiluk
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: debug
+  template:
+    metadata:
+      labels:
+        tier: debug
+    spec:    
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65534
+        runAsGroup: 65534
+      containers:
+      - image: chiluk/debug
+        name: chiluk-debug
+        command:
+          - 'sleep'
+          - '3600'

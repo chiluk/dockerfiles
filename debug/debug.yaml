@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: debug
+  name: chiluk-debug
   labels:
     app: debug
     owner: chiluk
