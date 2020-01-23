@@ -4,14 +4,14 @@ metadata:
   name: debug
   labels:
     app: debug
-    owner: connor
+    owner: chiluk
 spec:
   securityContext:
     runAsNonRoot: true
     runAsUser: 65534
     runAsGroup: 65534
   containers:
-  - image: clly/debug
+  - image: chiluk/debug
     name: debug
     command:
       - 'sleep'

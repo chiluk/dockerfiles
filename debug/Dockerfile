@@ -10,5 +10,8 @@ RUN apt-get update && \
         vim \
         wget \
         tzdata \
+        iperf \
+        conntrack \
+        net-tools \
     && rm -rf /var/lib/apt/lists/* 
 
