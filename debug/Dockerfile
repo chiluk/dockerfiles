@@ -13,5 +13,9 @@ RUN apt-get update && \
         iperf3 \
         conntrack \
         net-tools \
+        dnsdiag \
+        inetutils-traceroute \
+        tcptraceroute \
+        traceroute \
     && rm -rf /var/lib/apt/lists/* 
 
