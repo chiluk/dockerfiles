@@ -1,0 +1,15 @@
+#!/bin/bash
+# set -euo pipefail
+
+typeset -i total retrans count
+
+count=0
+total=0
+echo "run#	retrans	avg" | awk '{"%10s\t%10s\t%10s", $1, $2, $3}'
+for i in {1..10}
+do
+	let "count += 1";
+	retrans=$( iperf3 -c $1 -p 5002 -b 1000M | grep sender | awk '{print $9'} )
+	total=$(( total + retrans ))
+	echo $count $retrans $(( total / count )) | awk '{"%10s\t%10s\t%10s", $1, $2, $3"}'
+done
