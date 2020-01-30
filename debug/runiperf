@@ -9,7 +9,7 @@ echo "run# retrans avg" | awk {'printf("%-10s %-10s %-10s\n", $1, $2, $3 )'}
 for i in {1..10}
 do
 	let "count += 1";
-	retrans=$( iperf3 -c $1 -p 5002 -b 1000M | grep sender | awk '{print $9'} )
+	retrans=$( iperf3 -c $1 -p 5002 | grep sender | awk '{print $9'} )
 	total=$(( total + retrans ))
 	echo $count $retrans $(( total / count )) | awk {'printf("%-10s %-10s %-10s\n", $1, $2, $3)'}
 done
