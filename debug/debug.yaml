@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: chiluk-debug
+  name: chiluk-debug-node2
   labels:
     app: debug
     owner: chiluk
@@ -17,3 +17,10 @@ spec:
     command:
       - 'sleep'
       - '28800'
+  nodeSelector:
+    debugdave: "true"
+  nodeName: "tst-kexec7.indeed.net"
+  tolerations:
+  - key: "debugdave"
+    operator: "Equal"
+    value: "true"
