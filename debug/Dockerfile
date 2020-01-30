@@ -19,3 +19,4 @@ RUN apt-get update && \
         traceroute \
     && rm -rf /var/lib/apt/lists/* 
 
+COPY runiperf /usr/local/bin/runiperf
